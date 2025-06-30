@@ -70,10 +70,10 @@ app.use(fileUpload({
     fileSize: 10 * 1024 * 1024, // 10MB max file size
   },
   abortOnLimit: true,
-  useTempFiles: false, // Keep files in memory by default
-  parseNested: true, // Allow nested file objects
+  useTempFiles: true, // Keep files in memory by default
+  tempFileDir: '/tmp/', // Use Render's allowed temp directory
+  parseNested: true,
   debug: process.env.NODE_ENV === 'development',
-  // Sanitize filenames to prevent security issues
   safeFileNames: true,
   preserveExtension: true
 }));
