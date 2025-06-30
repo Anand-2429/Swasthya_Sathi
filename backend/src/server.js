@@ -53,6 +53,8 @@ const io = socketIo(server, {
   }
 });
 
+
+
 // Middleware
 app.use(cors({
   origin: '*',
@@ -121,6 +123,9 @@ require('./utils/socket')(io);
 
 // Start server
 const PORT = process.env.PORT || 5000;
+app.use((err, req, res, next) => {
+  console.error('Error:', err.message);
+  res.status(500).json({ message: 'Somethin wrong'})});
 server.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
