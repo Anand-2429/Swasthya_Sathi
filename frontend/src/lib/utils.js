@@ -1,6 +1,4 @@
-/**
- * Utility functions for the application
- */
+
 
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
